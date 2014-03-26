@@ -11,11 +11,10 @@ gulp.task 'build', ->
     .pipe(gulp.dest('public/javascripts/'))
 
 gulp.task 'watch', ->
-  gulp.src('public/javascript/**/*.coffee')
-    .pipe(watch((files) ->
-      files.pipe(coffee())
-    ))
-    .pipe(gulp.dest('public/javascripts/'))
+
+  watch glob: 'public/javascripts/*.coffee', (files) ->
+    files.pipe(coffee()).pipe(gulp.dest('public/javascripts/'))
+
   gulp.src ['public/javascripts/*.js', 'public/stylesheets/*.css', 'views/*.ejs']
     .pipe(watch())
     .pipe(livereload())
