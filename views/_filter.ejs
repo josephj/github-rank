@@ -1,0 +1,23 @@
+<!-- #filter (start) -->
+<div id="filter" ng-controller="FilterCtrl">
+  <div class="bd">
+    <form method="get" class="form-inline">
+      <span class="field">
+        <label class="control-label" for="location">Country: </label>
+        <select id="location" name="location" ui-select2="{allowClear: false, placeholder: 'Country'}" ng-model="select2" data-placeholder="Country">
+          <option value=""></option>
+          <option value="{{country.value}}" ng-repeat="country in countries">{{country.name}}</option>
+        </select>
+      </span>
+      <span class="field">
+        <label class="control-label" for="language">Language: </label>
+        <select id="language" name="language" ui-select2 ng-model="select2" data-placeholder="Language">
+          <option value=""></option>
+          <option value="{{language.value}}" ng-repeat="language in languages">{{language.name}}</option>
+        </select>
+      </span>
+      <button type="submit" value="Find" class="btn btn-default">Find</button>
+    </form>
+  </div>
+</div>
+<!-- #filter (end) -->
