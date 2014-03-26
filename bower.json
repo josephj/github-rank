@@ -1,0 +1,9 @@
+{
+  "name": "github-rank",
+  "version": "0.0.1",
+  "main": "app.js",
+  "dependencies": {
+    "bootstrap-sass": "twbs/bootstrap-sass#~3.1.1",
+    "angular": "~1.2.15"
+  }
+}
