@@ -1,7 +1,65 @@
 @import ../components/bootstrap-sass/vendor/assets/stylesheets/bootstrap
 
 body
-  background: #eee
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-a
-  color: #00B7FF
+  background: #f3f3f3
+  color: #333
+  font: 14px/1.4 'Avenir Next', 'Open Sans', 'PT Sans','DejaVu Sans','Bitstream Vera Sans',Verdana,sans-serif
+  padding-top: 70px
+a:link, a:visited
+  color: #333
+ul, li
+  list-style-type: none
+  margin: 0
+  padding: 0
+h1, h2, h3, h4, h5, h6
+  font-weight: 600
+::-moz-selection
+  color: #fff
+  background: rgba(#e43f7b, .8)
+::selection
+  color: #fff
+  background: rgba(#e43f7b, .8)
+
+body > .container
+  padding: 0 0 20px
+  background: #fff
+#header
+  a:link, a:visited
+    color: #fff
+
+#filter
+  margin-bottom: 20px
+  .bd
+    padding: 10px
+  &.affix
+    background: rgba(255, 255, 255, 0.8)
+
+@media (min-width: 768px)
+  #filter
+    width: 750px
+@media (min-width: 992px)
+  #filter
+    width: 970px
+
+#list
+  ul
+    text-align: center
+  li
+    display: inline-block
+    text-align: center
+    margin-bottom: 20px
+    .name-link
+      font-weight: bold
+      display: block
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+    .user-card
+      width: 150px
+      overflow: hidden
+      height: 150px
+    .img-link
+      display: block
+      margin-bottom: 5px
+
+

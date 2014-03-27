@@ -1,8 +1,8 @@
 API_ENTRYPOINT = "https://api.github.com/"
 
-app = angular.module('githubRankApp', ['ui.select2'])
+app = angular.module('githubRankApp', ['ui.select2', 'ngCookies'])
 
-app.controller 'SearchCtrl', ($scope, $http) ->
+app.controller 'SearchCtrl', ($scope, $http, $cookies) ->
   # Countries and Languages Lists
   $scope.countryList = [
     {name: 'China', value: 'China'},
@@ -19,10 +19,12 @@ app.controller 'SearchCtrl', ($scope, $http) ->
   ]
   # Selected values.
   $scope.users = []
-  $scope.countries = 'Taiwan'
-  $scope.languages = 'JavaScript'
+  $scope.countries = $cookies.countries || 'Taiwan'
+  $scope.languages = $cookies.languages || 'JavaScript'
   # Updates rank users.
-  $scope.updateUsers = ->
+  $scope.updateUsers = () ->
+    $cookies.countries = $scope.countries
+    $cookies.languages = $scope.languages
     query = "location:#{$scope.countries}+language:#{$scope.languages}"
     url = "#{API_ENTRYPOINT}search/users?q=#{query}&sort=followers&page=1&per_page=50&callback=JSON_CALLBACK"
     $http.jsonp(url).then (response) ->

@@ -6316,10 +6316,86 @@ button.close {
   }
 }
 body {
-  background: #eeeeee;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #f3f3f3;
+  color: #333333;
+  font: 14px/1.4 "Avenir Next", "Open Sans", "PT Sans", "DejaVu Sans", "Bitstream Vera Sans", Verdana, sans-serif;
+  padding-top: 70px;
 }
 
-a {
-  color: #00b7ff;
+a:link, a:visited {
+  color: #333333;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+::-moz-selection {
+  color: white;
+  background: rgba(228, 63, 123, 0.8);
+}
+
+::selection {
+  color: white;
+  background: rgba(228, 63, 123, 0.8);
+}
+
+body > .container {
+  padding: 0 0 20px;
+  background: white;
+}
+
+#header a:link, #header a:visited {
+  color: white;
+}
+
+#filter {
+  margin-bottom: 20px;
+}
+#filter .bd {
+  padding: 10px;
+}
+#filter.affix {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 768px) {
+  #filter {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  #filter {
+    width: 970px;
+  }
+}
+#list ul {
+  text-align: center;
+}
+#list li {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#list li .name-link {
+  font-weight: bold;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+#list li .user-card {
+  width: 150px;
+  overflow: hidden;
+  height: 150px;
+}
+#list li .img-link {
+  display: block;
+  margin-bottom: 5px;
 }

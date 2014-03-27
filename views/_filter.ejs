@@ -1,5 +1,5 @@
 <!-- #filter (start) -->
-<div id="filter">
+<div id="filter" data-spy="affix" data-offset-top="70" data-offset-bottom="200">
   <div class="bd">
     <form method="get" class="form-inline">
       <span class="field">
@@ -16,7 +16,6 @@
           <option value="{{language.value}}" ng-repeat="language in languageList">{{language.name}}</option>
         </select>
       </span>
-      <button type="submit" value="Find" class="btn btn-default">Find</button>
     </form>
   </div>
 </div>
