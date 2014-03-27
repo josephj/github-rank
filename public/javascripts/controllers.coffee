@@ -25,8 +25,10 @@ app.controller 'SearchCtrl', ($scope, $http, $cookies) ->
   $scope.updateUsers = () ->
     $cookies.countries = $scope.countries
     $cookies.languages = $scope.languages
-    query = "location:#{$scope.countries}+language:#{$scope.languages}"
-    url = "#{API_ENTRYPOINT}search/users?q=#{query}&sort=followers&page=1&per_page=50&callback=JSON_CALLBACK"
+    queries = []
+    queries.push("location:#{$scope.countries}") if $scope.countries.length
+    queries.push("language:#{$scope.languages}") if $scope.languages.length
+    url = "#{API_ENTRYPOINT}search/users?q=#{queries.join('+')}&sort=followers&page=1&per_page=50&callback=JSON_CALLBACK"
     $http.jsonp(url).then (response) ->
       $scope.users = response.data.data.items
   $scope.updateUsers()
