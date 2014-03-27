@@ -1,10 +1,12 @@
 (function() {
-  var app;
+  var API_ENTRYPOINT, app;
+
+  API_ENTRYPOINT = "https://api.github.com/";
 
   app = angular.module('githubRankApp', ['ui.select2']);
 
-  app.controller('FilterCtrl', function($scope) {
-    $scope.countries = [
+  app.controller('SearchCtrl', function($scope, $http) {
+    $scope.countryList = [
       {
         name: 'China',
         value: 'China'
@@ -16,7 +18,7 @@
         value: 'Hong Kong'
       }
     ];
-    $scope.languages = [
+    $scope.languageList = [
       {
         name: 'PHP',
         value: 'PHP'
@@ -37,6 +39,18 @@
         value: 'Perl'
       }
     ];
+    $scope.users = [];
+    $scope.countries = 'Taiwan';
+    $scope.languages = 'JavaScript';
+    $scope.updateUsers = function() {
+      var query, url;
+      query = "location:" + $scope.countries + "+language:" + $scope.languages;
+      url = "" + API_ENTRYPOINT + "search/users?q=" + query + "&sort=followers&page=1&per_page=50&callback=JSON_CALLBACK";
+      return $http.jsonp(url).then(function(response) {
+        return $scope.users = response.data.data.items;
+      });
+    };
+    $scope.updateUsers();
     return $scope;
   });
 

@@ -10,16 +10,16 @@
     <link rel="stylesheet" href="components/select2/select2.css">
     <script src="components/jquery/dist/jquery.min.js"></script>
     <script src="components/select2/select2.js"></script>
-    <script src="components/angular/angular.min.js"></script>
-    <script src="javascripts/controllers.js"></script>
+    <script src="components/angular/angular.js"></script>
     <script src="components/angular-ui-select2/src/select2.js"></script>
+    <script src="javascripts/controllers.js"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="//cdn.ravenjs.com/1.1.11/jquery,native/raven.min.js"></script>
   </head>
-  <body>
+  <body ng-controller="SearchCtrl">
     <div class="container">
       <%- include _header.ejs %>
       <%- include _filter.ejs %>

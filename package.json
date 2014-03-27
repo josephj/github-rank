@@ -6,20 +6,25 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "express": "~3.4.8",
-    "static-favicon": "~1.0.0",
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
     "debug": "~0.7.4",
     "ejs": "~0.8.5",
-    "node-compass": "0.2.3"
+    "express": "~3.4.8",
+    "github": "^0.1.15",
+    "morgan": "~1.0.0",
+    "node-compass": "0.2.3",
+    "static-favicon": "~1.0.0"
   },
   "devDependencies": {
     "coffee-script": "^1.7.1",
     "gulp-coffee": "^1.4.1",
     "gulp-coffeelint": "^0.3.1",
+    "gulp-karma": "0.0.4",
     "gulp-livereload": "^1.2.0",
-    "gulp-watch": "^0.5.3"
+    "gulp-watch": "^0.5.3",
+    "karma": "^0.12.1",
+    "karma-chrome-launcher": "^0.1.2",
+    "karma-jasmine": "^0.1.5"
   }
 }

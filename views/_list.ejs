@@ -1,20 +1,40 @@
+<!--
+    "login": "josephj",
+    "id": 136648,
+    "avatar_url": "https://avatars.githubusercontent.com/u/136648?",
+    "gravatar_id": "c43978727926bed201399816f7efb45d",
+    "url": "https://api.github.com/users/josephj",
+    "html_url": "https://github.com/josephj",
+    "followers_url": "https://api.github.com/users/josephj/followers",
+    "following_url": "https://api.github.com/users/josephj/following{/other_user}",
+    "gists_url": "https://api.github.com/users/josephj/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/josephj/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/josephj/subscriptions",
+    "organizations_url": "https://api.github.com/users/josephj/orgs",
+    "repos_url": "https://api.github.com/users/josephj/repos",
+    "events_url": "https://api.github.com/users/josephj/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/josephj/received_events",
+    "type": "User",
+    "site_admin": false,
+    "score": 1.0
+-->
 <!-- #list (start) -->
 <div id="list">
   <div class="bd">
     <ul>
-      <li id="{{element_id}}">
+      <li id="user-{{user.id}}" ng-repeat="user in users">
         <div class="user-card">
           <div class="main">
             <div class="name">
-              <a href="http://github.com/{{username}}" data-username="{{username}}" target="_blank" class="name-link">{{name}}</a>
+              <a href="http://github.com/{{user.login}}" data-login="{{user.login}}" target="_blank" class="name-link">{{user.login}}</a>
             </div>
-            <a href="http://github.com/{{username}}" data-username="{{username}}" target="_blank" class="img-link">
-              <img src="http://www.gravatar.com/avatar/{{gravatar_id}}?s=120">
+            <a href="http://github.com/{{user.login}}" data-login="{{user.login}}" data-avatar-url="{{user.avatar_url}}" target="_blank" class="img-link">
+              <img src="http://www.gravatar.com/avatar/{{user.gravatar_id}}?s=120">
             </a>
           </div>
           <div class="info">
-            <span class="repos"><strong>{{repos}}</strong> repos / </span>
-            <span class="followers"><strong>{{followers}}</strong> followers</span>
+            <span class="repos"><strong>{{user.repos}}</strong> repos / </span>
+            <span class="followers"><strong>{{user.followers}}</strong> followers</span>
           </div>
         </div>
       </li>
