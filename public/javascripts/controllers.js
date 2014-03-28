@@ -58,8 +58,8 @@
       }
     ];
     $scope.users = [];
-    $scope.countries = $cookies.countries || 'Taiwan';
-    $scope.languages = $cookies.languages || 'JavaScript';
+    $scope.countries = $cookies.countries ? $cookies.countries.split(',') : ['Taiwan'];
+    $scope.languages = $cookies.languages ? $cookies.languages.split(',') : ['JavaScript'];
     $scope.getUserProfile = function(user, rank) {
       var url;
       $scope.profile = null;
@@ -78,17 +78,18 @@
       }
     };
     $scope.updateUsers = function() {
-      var queries, url;
-      $cookies.countries = $scope.countries;
-      $cookies.languages = $scope.languages;
+      var queries, query, url;
+      $cookies.countries = $scope.countries.join(',');
+      $cookies.languages = $scope.languages.join(',');
       queries = [];
-      if ($scope.countries.length) {
-        queries.push("location:" + (encodeURIComponent($scope.countries)));
-      }
-      if ($scope.languages.length) {
-        queries.push("language:" + $scope.languages);
-      }
-      url = "" + API_ENTRYPOINT + "search/users?q=" + (queries.join('+')) + "&sort=followers&page=1&per_page=50&callback=JSON_CALLBACK";
+      angular.forEach($scope.countries, function(value, key) {
+        return queries.push("location:" + value);
+      });
+      angular.forEach($scope.languages, function(value, key) {
+        return queries.push("language:" + value);
+      });
+      query = queries.join('+');
+      url = "" + API_ENTRYPOINT + "search/users?q=" + query + "&sort=followers&page=1&per_page=50&callback=JSON_CALLBACK";
       return $http.jsonp(url).then(function(response) {
         return $scope.users = response.data.data.items;
       });

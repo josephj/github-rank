@@ -2,7 +2,7 @@
 <div id="list">
   <div class="bd">
     <ul class="clearfix center-block">
-      <li id="user-{{user.id}}" ng-repeat="user in users">
+      <li id="user-{{user.id}}" ng-repeat="user in users" ng-animate="'animate'">
         <div class="user-card" ng-click="getUserProfile(user, $index + 1);">
           <div class="main">
             <a href="javascript:void(0);" data-login="{{user.login}}" data-avatar-url="{{user.avatar_url}}" target="_blank" class="img-link ng-scope">

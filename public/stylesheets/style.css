@@ -6357,6 +6357,7 @@ body > .container {
 }
 
 #header {
+  background: #343844;
   padding: 10px 0 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   margin-bottom: 0;
@@ -6432,6 +6433,10 @@ body > .container {
 }
 
 #profile {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
   z-index: 1;
   background: rgba(0, 0, 0, 0.8);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);

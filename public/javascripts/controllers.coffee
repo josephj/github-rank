@@ -27,8 +27,8 @@ app.controller 'SearchCtrl', ($scope, $http, $cookies) ->
 
   # Selected values.
   $scope.users = []
-  $scope.countries = $cookies.countries || 'Taiwan'
-  $scope.languages = $cookies.languages || 'JavaScript'
+  $scope.countries = if ($cookies.countries) then $cookies.countries.split(',') else ['Taiwan']
+  $scope.languages = if ($cookies.languages) then $cookies.languages.split(',') else ['JavaScript']
 
   # Fetch user's profile data from github
   $scope.getUserProfile = (user, rank) ->
@@ -49,12 +49,15 @@ app.controller 'SearchCtrl', ($scope, $http, $cookies) ->
 
   # Updates rank users
   $scope.updateUsers = ->
-    $cookies.countries = $scope.countries
-    $cookies.languages = $scope.languages
+    $cookies.countries = $scope.countries.join(',')
+    $cookies.languages = $scope.languages.join(',')
     queries = []
-    queries.push("location:#{encodeURIComponent($scope.countries)}") if $scope.countries.length
-    queries.push("language:#{$scope.languages}") if $scope.languages.length
-    url = "#{API_ENTRYPOINT}search/users?q=#{queries.join('+')}&sort=followers&page=1&per_page=50&callback=JSON_CALLBACK"
+    angular.forEach $scope.countries, (value, key) ->
+      queries.push("location:#{value}")
+    angular.forEach $scope.languages, (value, key) ->
+      queries.push("language:#{value}")
+    query = (queries.join('+'))
+    url = "#{API_ENTRYPOINT}search/users?q=#{query}&sort=followers&page=1&per_page=50&callback=JSON_CALLBACK"
     $http.jsonp(url).then (response) ->
       $scope.users = response.data.data.items
   $scope.updateUsers()
