@@ -41,6 +41,30 @@ body > .container
     font-family: 'Lemon', cursive
     color: #eee
     text-decoration: none
+  .quote
+    p
+      background: #fff
+      color: #333
+      text-shadow: none
+      font-size: 11px
+      border-radius: 3px
+      padding: 3px 10px
+      margin-right: 5px
+      margin-top: 3px
+      position: relative
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        right: -6px
+        top: 8px
+        font-size: 0
+        line-height: 0
+        width: 1px
+        height: 1px
+        border: solid 3px transparent
+        border-left: solid 7px #fff
+        border-right-width: 0
 
 #filter
   margin-bottom: 20px
@@ -86,7 +110,6 @@ body > .container
       margin-bottom: 5px
 
 #profile
-  +transition()
   z-index: 1
   background: rgba(0, 0, 0, 0.8)
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5)
@@ -149,4 +172,23 @@ body > .container
     color: #999
     font-size: 15px
 
+//====================
+// For Phone
+//====================
+@media screen and (max-width: 767px)
+  .github-link
+    display: none
+  #header
+    text-align: center
+    .quote-avatar
+      display: none
+    .quote
+      display: none
+  #profile
+    .mod-content
+      margin-top: 80px
+      min-width: initial
+    img
+      width: 50px
+      height: 50px
 

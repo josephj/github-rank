@@ -6373,6 +6373,31 @@ body > .container {
   color: #eeeeee;
   text-decoration: none;
 }
+#header .quote p {
+  background: white;
+  color: #333333;
+  text-shadow: none;
+  font-size: 11px;
+  border-radius: 3px;
+  padding: 3px 10px;
+  margin-right: 5px;
+  margin-top: 3px;
+  position: relative;
+}
+#header .quote p:before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -6px;
+  top: 8px;
+  font-size: 0;
+  line-height: 0;
+  width: 1px;
+  height: 1px;
+  border: solid 3px transparent;
+  border-left: solid 7px white;
+  border-right-width: 0;
+}
 
 #filter {
   margin-bottom: 20px;
@@ -6433,10 +6458,6 @@ body > .container {
 }
 
 #profile {
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
   z-index: 1;
   background: rgba(0, 0, 0, 0.8);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -6511,4 +6532,29 @@ body > .container {
 #profile .icon {
   color: #999999;
   font-size: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .github-link {
+    display: none;
+  }
+
+  #header {
+    text-align: center;
+  }
+  #header .quote-avatar {
+    display: none;
+  }
+  #header .quote {
+    display: none;
+  }
+
+  #profile .mod-content {
+    margin-top: 80px;
+    min-width: initial;
+  }
+  #profile img {
+    width: 50px;
+    height: 50px;
+  }
 }
