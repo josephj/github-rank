@@ -6318,8 +6318,7 @@ button.close {
 body {
   background: #f3f3f3;
   color: #333333;
-  font: 14px/1.4 "Avenir Next", "Open Sans", "PT Sans", "DejaVu Sans", "Bitstream Vera Sans", Verdana, sans-serif;
-  padding-top: 70px;
+  font: 14px/1.4 "Avenir Next", "Lato", "PT Sans", "DejaVu Sans", "Bitstream Vera Sans", Verdana, sans-serif;
 }
 
 a:link, a:visited {
@@ -6336,6 +6335,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+h1, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
 ::-moz-selection {
   color: white;
   background: rgba(228, 63, 123, 0.8);
@@ -6349,10 +6353,24 @@ h1, h2, h3, h4, h5, h6 {
 body > .container {
   padding: 0 0 20px;
   background: white;
+  min-height: 500px;
 }
 
+#header {
+  padding: 10px 0 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 0;
+  border-radius: 0;
+  text-shadow: 1px -1px 0 #aaaaaa;
+  color: #eeeeee;
+}
+#header h1 {
+  font-size: 25px;
+}
 #header a:link, #header a:visited {
-  color: white;
+  font-family: "Lemon", cursive;
+  color: #eeeeee;
+  text-decoration: none;
 }
 
 #filter {
@@ -6362,9 +6380,18 @@ body > .container {
   padding: 10px;
 }
 #filter.affix {
-  background: rgba(255, 255, 255, 0.8);
+  top: 0;
+  background: rgba(255, 255, 255, 0.7);
 }
 
+@media (max-width: 767px) {
+  #filter {
+    width: 100%;
+  }
+  #filter .form-group {
+    margin-bottom: 10px;
+  }
+}
 @media (min-width: 768px) {
   #filter {
     width: 750px;
@@ -6373,6 +6400,11 @@ body > .container {
 @media (min-width: 992px) {
   #filter {
     width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  #filter {
+    width: 1170px;
   }
 }
 #list ul {
@@ -6392,10 +6424,86 @@ body > .container {
 }
 #list li .user-card {
   width: 150px;
-  overflow: hidden;
   height: 150px;
 }
 #list li .img-link {
   display: block;
   margin-bottom: 5px;
+}
+
+#profile {
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  vertical-align: center;
+}
+#profile .mod-content {
+  display: table;
+  position: relative;
+  margin: 150px auto;
+  background: white;
+  border-radius: 5px;
+  min-width: 450px;
+}
+#profile .close-link {
+  position: absolute;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  right: 10px;
+  top: 5px;
+}
+#profile .bd {
+  padding: 30px 20px 20px;
+}
+#profile h3 strong {
+  color: #eb7600;
+}
+#profile h3 .login {
+  font-size: 12px;
+  font-weight: normal;
+  color: #999999;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+#profile ul {
+  margin-bottom: 10px;
+}
+#profile .badges {
+  border-top: dotted 1px #cccccc;
+  padding-top: 10px;
+}
+#profile .badges span {
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+}
+#profile .badges strong {
+  font-size: 20px;
+  display: block;
+}
+#profile span.title {
+  color: #666666;
+}
+#profile span.title .icon {
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+#profile span.title .text {
+  display: none;
+}
+#profile span.title, #profile span.content {
+  display: table-cell;
+  padding: 2px 8px 2px 0;
+}
+#profile .icon {
+  color: #999999;
+  font-size: 15px;
 }

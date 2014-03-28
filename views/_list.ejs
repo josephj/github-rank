@@ -3,21 +3,15 @@
   <div class="bd">
     <ul class="clearfix center-block">
       <li id="user-{{user.id}}" ng-repeat="user in users">
-        <div class="user-card">
+        <div class="user-card" ng-click="getUserProfile(user, $index + 1);">
           <div class="main">
-            <a href="http://github.com/{{user.login}}" data-login="{{user.login}}" data-avatar-url="{{user.avatar_url}}" target="_blank" class="img-link">
+            <a href="javascript:void(0);" data-login="{{user.login}}" data-avatar-url="{{user.avatar_url}}" target="_blank" class="img-link ng-scope">
               <img src="http://www.gravatar.com/avatar/{{user.gravatar_id}}?s=120" class="img-circle" widt="120" height="120">
             </a>
             <div class="name">
               <a href="http://github.com/{{user.login}}" data-login="{{user.login}}" target="_blank" class="name-link">{{user.login}}</a>
             </div>
           </div>
-          <!--
-          <div class="info">
-            <span class="repos"><strong>{{user.repos}}</strong> repos / </span>
-            <span class="followers"><strong>{{user.followers}}</strong> followers</span>
-          </div>
-          -->
         </div>
       </li>
     </ul>

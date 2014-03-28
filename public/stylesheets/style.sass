@@ -3,8 +3,7 @@
 body
   background: #f3f3f3
   color: #333
-  font: 14px/1.4 'Avenir Next', 'Open Sans', 'PT Sans','DejaVu Sans','Bitstream Vera Sans',Verdana,sans-serif
-  padding-top: 70px
+  font: 14px/1.4 'Avenir Next', 'Lato', 'PT Sans','DejaVu Sans','Bitstream Vera Sans',Verdana,sans-serif
 a:link, a:visited
   color: #333
 ul, li
@@ -13,6 +12,9 @@ ul, li
   padding: 0
 h1, h2, h3, h4, h5, h6
   font-weight: 600
+h1, h3, h4
+  margin: 0
+  padding: 0
 ::-moz-selection
   color: #fff
   background: rgba(#e43f7b, .8)
@@ -22,23 +24,44 @@ h1, h2, h3, h4, h5, h6
 body > .container
   padding: 0 0 20px
   background: #fff
+  min-height: 500px
+
 #header
+  padding: 10px 0 0
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7)
+  margin-bottom: 0
+  border-radius: 0
+  text-shadow: 1px -1px 0 #aaa
+  color: #eee
+  h1
+    font-size: 25px
   a:link, a:visited
-    color: #fff
+    font-family: 'Lemon', cursive
+    color: #eee
+    text-decoration: none
 
 #filter
   margin-bottom: 20px
   .bd
     padding: 10px
   &.affix
-    background: rgba(255, 255, 255, 0.8)
+    top: 0
+    background: rgba(255, 255, 255, 0.7)
 
+@media (max-width: 767px)
+  #filter
+    width: 100%
+    .form-group
+      margin-bottom: 10px
 @media (min-width: 768px)
   #filter
     width: 750px
 @media (min-width: 992px)
   #filter
     width: 970px
+@media (min-width: 1200px)
+  #filter
+    width: 1170px
 
 #list
   ul
@@ -55,10 +78,72 @@ body > .container
       overflow: hidden
     .user-card
       width: 150px
-      overflow: hidden
       height: 150px
     .img-link
       display: block
       margin-bottom: 5px
+
+#profile
+  z-index: 1
+  background: rgba(0, 0, 0, 0.8)
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5)
+  padding: 10px
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  vertical-align: center
+  .mod-content
+    display: table
+    position: relative
+    margin: 150px auto
+    background: #fff
+    border-radius: 5px
+    min-width: 450px
+  .close-link
+    position: absolute
+    display: inline-block
+    font-size: 16px
+    font-weight: bold
+    right: 10px
+    top: 5px
+  .bd
+    padding: 30px 20px 20px
+  h3
+    strong
+      color: #eb7600
+    .login
+      font-size: 12px
+      font-weight: normal
+      color: #999
+      margin-bottom: 10px
+      margin-left: 5px
+  ul
+    margin-bottom: 10px
+  .badges
+    border-top: dotted 1px #ccc
+    padding-top: 10px
+    span
+      display: inline-block
+      text-align: center
+      padding: 5px
+    strong
+      font-size: 20px
+      display: block
+  span.title
+    color: #666
+    .icon
+      width: 20px
+      display: inline-block
+      text-align: center
+    .text
+      display: none
+  span.title, span.content
+    display: table-cell
+    padding: 2px 8px 2px 0
+  .icon
+    color: #999
+    font-size: 15px
 
 

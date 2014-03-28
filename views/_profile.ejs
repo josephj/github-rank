@@ -1,0 +1,65 @@
+{{profile.rank}}
+<div id="profile" ng-if="profile">
+  <div class="mod-content">
+    <div class="bd">
+      <div class="media">
+        <div class="pull-left">
+          <img ng-src="{{profile.avatar_url}}" width="120" height-"120" class="img-circle">
+        </div>
+        <div class="media-body">
+          <div class="media-heading">
+            <h3>
+              <strong>#{{profile.rank}}</strong>
+              {{profile.name}}
+              <span class="login">({{profile.login}})</span>
+            </h3>
+          </div>
+          <ul class="clearfix">
+            <li ng-if="profile.location">
+              <span class="title">
+                <i class="icon fa fa-map-marker"></i>
+                <span class="text">Location:</span>
+              </span>
+              <span class="content">
+                {{profile.location}}</a>
+              </span>
+            </li>
+            <li ng-if="profile.email">
+              <span class="title">
+                <i class="icon fa fa-envelope-o"></i>
+                <span class="text">E-mail:</span>
+              </span>
+              <span class="content">
+                <a href="mailto:{{profile.email}}" target="_blank">{{profile.email}}</a>
+              </span>
+            </li>
+            <li ng-if="profile.blog">
+              <span class="title">
+                <i class="icon fa fa-desktop"></i>
+                <span class="text">Blog:</span>
+              </span>
+              <span class="content">
+                <a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a>
+              </span>
+            </li>
+          </ul>
+          <div class="badges">
+            <span>
+              <strong>{{profile.followers}}</strong>
+              Followers
+            </span>
+            <span>
+              <strong>{{profile.public_repos}}</strong>
+              Repos
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft">
+      <a href="javascript:void(0);" class="close-link" ng-click="hide()" title="Hide {{profile.login}}'s profile">
+        <i class="fa fa-times"></i>
+      </a>
+    </div>
+  </div>
+</div>
