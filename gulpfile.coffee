@@ -5,6 +5,11 @@ livereload = require 'gulp-livereload'
 watch = require 'gulp-watch'
 karma = require 'gulp-karma'
 
+gulp.task 'lint', ->
+  gulp.src ['./**/*.coffee', '!./node_modules/**', '!./public/components/**']
+    .pipe coffeelint()
+    .pipe coffeelint.reporter()
+
 gulp.task 'build', ->
   gulp.src('public/javascripts/*.coffee')
     .pipe(coffeelint())
