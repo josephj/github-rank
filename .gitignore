@@ -1,5 +1,5 @@
-node_modules
+#node_modules
 .DS_Store
 sauce_connect.log
 .sass-cache
-public/components
+#public/components
