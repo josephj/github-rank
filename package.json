@@ -8,7 +8,7 @@
     "npm": "1.4.6"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower install --production"
+    "postinstall": "./node_modules/.bin/bower install"
   },
   "dependencies": {
     "body-parser": "~1.0.0",
