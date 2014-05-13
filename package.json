@@ -1,8 +1,6 @@
 {
   "name": "github-rank",
   "version": "0.0.1",
-  "private": true,
-  "main": "app.js",
   "engines": {
     "node": "0.10.x",
     "npm": "1.4.6"
@@ -11,27 +9,23 @@
     "postinstall": "./node_modules/.bin/bower install"
   },
   "dependencies": {
-    "body-parser": "~1.0.0",
+    "body-parser": "^1.0.2",
     "bower": "^1.3.2",
-    "cookie-parser": "~1.0.1",
-    "debug": "~0.7.4",
-    "ejs": "~0.8.5",
-    "express": "~3.4.8",
-    "github": "^0.1.15",
+    "connect-timeout": "^1.1.0",
+    "cookie-parser": "^1.0.1",
+    "ejs": "^0.8.8",
+    "express": "^3.6.0",
     "logfmt": "^1.1.2",
     "morgan": "~1.0.0",
     "node-compass": "0.2.3",
-    "static-favicon": "~1.0.0"
+    "static-favicon": "^1.0.2"
   },
   "devDependencies": {
     "coffee-script": "^1.7.1",
+    "debug": "^0.7.4",
+    "gulp-watch": "^0.5.3",
     "gulp-coffee": "^1.4.1",
     "gulp-coffeelint": "^0.3.1",
-    "gulp-karma": "0.0.4",
-    "gulp-livereload": "^1.2.0",
-    "gulp-watch": "^0.5.3",
-    "karma": "^0.12.1",
-    "karma-chrome-launcher": "^0.1.2",
-    "karma-jasmine": "^0.1.5"
+    "gulp-livereload": "^1.2.0"
   }
 }

@@ -5,10 +5,10 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var routes = require('./routes');
 var users = require('./routes/user');
 var logfmt = require('logfmt');
+var timeout = require('connect-timeout');
 
 var app = express();
 
@@ -21,6 +21,7 @@ app.use(logfmt.requestLogger());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(timeout(5000));
 app.use(cookieParser());
 app.use(require('node-compass')({mode: 'expanded'}));
 app.use(express.static(path.join(process.env.PWD, 'public')));

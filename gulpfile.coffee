@@ -3,7 +3,6 @@ coffee = require 'gulp-coffee'
 coffeelint = require 'gulp-coffeelint'
 livereload = require 'gulp-livereload'
 watch = require 'gulp-watch'
-karma = require 'gulp-karma'
 
 gulp.task 'lint', ->
   gulp.src ['./**/*.coffee', '!./node_modules/**', '!./public/components/**']
@@ -28,10 +27,6 @@ gulp.task 'test', ->
     'public/javascripts/controllers.coffee'
     'test/unit/*.coffee'
   ]
-  gulp.src(files)
-    .pipe karma
-      configFile: 'karma.conf.js'
-      action: 'run'
 
 gulp.task 'default', ->
   gulp.run('build')
